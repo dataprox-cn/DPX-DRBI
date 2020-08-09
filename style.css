@@ -176,7 +176,7 @@ body {
       margin-bottom: 3em;
     }
     #cd-timeline::before {
-      left: 50%;
+      left: 51.5%;
       margin-left: -2px;
     }
   }
@@ -198,7 +198,7 @@ body {
   }
   @media only screen and (min-width: 1170px) {
     .cd-timeline-block {
-      margin: 4em 0;
+      margin: 7em 0;
     }
     .cd-timeline-block:first-child {
       margin-top: 0;
@@ -381,9 +381,9 @@ body {
   }
   @media only screen and (min-width: 1170px) {
     .cd-timeline-content {
-      margin-left: 30;
+      margin-left: 13%;
       padding: 1.6em;
-      width: 45%;
+      width: 35%;
     }
     .cd-timeline-content::before {
       top: 24px;
@@ -402,7 +402,8 @@ body {
       font-size: 16px;
       font-size: 1rem;
     }
-    .cd-timeline-block:nth-child(even) .cd-timeline-content {
+    /* commented for test  */
+    /* .cd-timeline-block:nth-child(even) .cd-timeline-content {
       float: right;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
@@ -411,7 +412,20 @@ body {
       right: 100%;
       border-color: transparent;
       border-right-color: #ffffff;
+    } */
+
+    /* new block with .cd-timeline-content logic float right disregard to .cd-timeline-block */
+    .cd-timeline-content:nth-child(odd) {
+      float: right;
     }
+    .cd-timeline-content:nth-child(odd)::before {
+      top: 24px;
+      left: auto;
+      right: 100%;
+      border-color: transparent;
+      border-right-color: #ffffff;
+    }
+    /* new logic block end  */
     .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
       float: right;
     }
