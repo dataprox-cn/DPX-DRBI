@@ -9,7 +9,7 @@ body {
     max-height: 50%;
     min-height: 20%;
     height: 200px;
-    background-size: 50% 60%;
+    background-size: 90% 100%;
     background-position: center center;
     background-repeat:no-repeat;
 }
@@ -33,6 +33,37 @@ body {
 #p1990_5{
   background-image: url('./pictures/1990_1999_2.png');
 }
+
+#p2000_2001{
+  background-image: url('./pictures/2000_2001.png');
+}
+#p2000_2004{
+  background-image: url('./pictures/2000_2004.png');
+}
+#p2000_2005{
+  background-image: url('./pictures/2000_2005.png');
+}
+#p2000_2006{
+  background-image: url('./pictures/2000_2006.png');
+}
+
+#p2010_2017{
+  background-image: url('./pictures/2010_2017.png');
+}
+#p2010_2018{
+  background-image: url('./pictures/2010_2018.png');
+}
+#p2010_2019{
+  background-image: url('./pictures/2010_2019.png');
+}
+#p2010_2019_2{
+  background-image: url('./pictures/2010_2019_2.png');
+}
+
+#p2020{
+  background-image: url('./pictures/2020.png');
+}
+
   #title {
     background-color: #333333;
     margin-right: 50%;
@@ -87,6 +118,8 @@ body {
     margin-left: 9%;
     width: 75px;
     font-style: oblique;
+    cursor: pointer;
+    outline: none;
   }
   
   /* -------------------------------- 
@@ -245,6 +278,12 @@ body {
     margin-left: -12px;
     margin-top: -12px;
   }
+
+  .cd-timeline-img.cd-ellipse {
+    background-color: #1a0033;
+    width: 9.5%;
+  }
+
   .cd-timeline-img.cd-picture {
     background-color: #1a0033;
     width: 8%;
@@ -574,8 +613,8 @@ body {
       transform: translateX(0);
     }
   }
-  input:hover {
+  /* input:hover {
     background: purple;
-  }
+  } */
   
 
