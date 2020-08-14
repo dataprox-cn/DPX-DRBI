@@ -1,0 +1,806 @@
+    <style>
+
+        .img_in_back{
+            width: 100%;
+            max-height: 50%;
+            min-height: 20%;
+            height: 200px;
+            background-size: 90% 100%;
+            background-position: center center;
+            background-repeat:no-repeat;
+        }
+
+        #p1980_1{
+            background-image: url('./pictures/1980_1.png');
+        }
+
+        #p1990_1{
+        background-image: url('./pictures/1990_1.png');
+        }
+        #p1990_2{
+        background-image: url('./pictures/1990_1996_1.png');
+        }
+        #p1990_3{
+        background-image: url('./pictures/1990_1996_2.png');
+        }
+        #p1990_4{
+        background-image: url('./pictures/1990_1999_1.png');
+        }
+        #p1990_5{
+        background-image: url('./pictures/1990_1999_2.png');
+        }
+
+        #p2000_2001{
+        background-image: url('./pictures/2000_2001.png');
+        }
+        #p2000_2004{
+        background-image: url('./pictures/2000_2004.png');
+        }
+        #p2000_2005{
+        background-image: url('./pictures/2000_2005.png');
+        }
+        #p2000_2006{
+        background-image: url('./pictures/2000_2006.png');
+        }
+
+        #p2010_2017{
+        background-image: url('./pictures/2010_2017.png');
+        }
+        #p2010_2018{
+        background-image: url('./pictures/2010_2018.png');
+        }
+        #p2010_2019{
+        background-image: url('./pictures/2010_2019.png');
+        }
+        #p2010_2019_2{
+        background-image: url('./pictures/2010_2019_2.png');
+        }
+
+        #p2020{
+        background-image: url('./pictures/2020.png');
+        }
+
+        #title {
+            background-color: #333333;
+            margin-right: 50%;
+            padding: 2.5%;
+            color: white;
+        }
+        
+        .button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            letter-spacing: 0px;
+        }
+        
+        .button1 {
+            margin-top: 20%;
+            margin-left: 10%;
+            width: 75px;
+            background-color: grey;
+            border: outset grey;
+            font-style: oblique;
+        }
+        
+        .CloseButton {
+            background-color: black;
+            color: white;
+            border: none;
+            padding-right: 5%;
+            padding-left: 5%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            border-radius: 25px;
+        }
+        
+        .OpenButton {
+            background: none;
+            color: white;
+            border: none;
+            padding-right: 70%;
+            padding-left: 7%;
+            padding-top: 7%;
+            padding-bottom: 4%;
+            border-radius: 25px;
+            margin-top: 16%;
+            margin-left: 9%;
+            width: 75px;
+            font-style: oblique;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        /* -------------------------------- 
+        
+        Primary style
+        
+        -------------------------------- */
+        html * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        *, *:after, *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 100%;
+            font-family: "Droid Serif", serif;
+            color: #7f8c97;
+            background-color: #e9f0f5;
+        }
+        
+        a {
+            color: #acb7c0;
+            text-decoration: none;
+            font-family: "Open Sans", sans-serif;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        h1, h2 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+        }
+        
+        /* -------------------------------- 
+        
+        Modules - reusable parts of our design
+        
+        -------------------------------- */
+        .cd-container {
+            /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+            width: 90%;
+            max-width: 1170px;
+            margin: 0 auto;
+        }
+        .cd-container::after {
+            /* clearfix */
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        /* -------------------------------- 
+        
+        Main components 
+        
+        -------------------------------- */
+        header {
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background: #303e49;
+        }
+        header h1 {
+            color: #ffffff;
+            font-size: 18px;
+            font-size: 1.125rem;
+        }
+        @media only screen and (min-width: 1170px) {
+            header {
+            height: 300px;
+            line-height: 300px;
+            }
+            header h1 {
+            font-size: 24px;
+            font-size: 1.5rem;
+            }
+        }
+        
+        #cd-timeline {
+            position: relative;
+            padding: 2em 0;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        #cd-timeline::before {
+            /* this is the vertical line */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 100%;
+            width: 4px;
+            background: #d7e4ed;
+        }
+        @media only screen and (min-width: 1170px) {
+            #cd-timeline {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            }
+            #cd-timeline::before {
+            left: 51.5%;
+            margin-left: -2px;
+            }
+        }
+        
+        .cd-timeline-block {
+            position: relative;
+            margin: 2em 0;
+        }
+        .cd-timeline-block::after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+        .cd-timeline-block:first-child {
+            margin-top: 0;
+        }
+        .cd-timeline-block:last-child {
+            margin-bottom: 0;
+        }
+        @media only screen and (min-width: 1170px) {
+            .cd-timeline-block {
+            margin: 7em 0;
+            }
+            .cd-timeline-block:first-child {
+            margin-top: 0;
+            }
+            .cd-timeline-block:last-child {
+            margin-bottom: 0;
+            }
+        }
+        
+        .cd-timeline-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+        }
+        .cd-timeline-img img {
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-left: -12px;
+            margin-top: -12px;
+        }
+
+        .cd-timeline-img.cd-ellipse {
+            background-color: #1a0033;
+            width: 9.5%;
+        }
+
+        .cd-timeline-img.cd-picture {
+            background-color: #1a0033;
+            width: 8%;
+        }
+        .cd-timeline-img.cd-movie {
+            background-color: #1a0033;
+            width: 8%;
+        }
+        .cd-timeline-img.cd-location {
+            background-color: #1a0033;
+            width: 8%;
+        }
+        @media only screen and (min-width: 1170px) {
+            .cd-timeline-img {
+            width: 60px;
+            height: 60px;
+            left: 50%;
+            margin-left: -30px;
+            /* Force Hardware Acceleration in WebKit */
+            -webkit-transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            }
+            .cssanimations .cd-timeline-img.is-hidden {
+            visibility: hidden;
+            }
+            .cssanimations .cd-timeline-img.bounce-in {
+            visibility: visible;
+            -webkit-animation: cd-bounce-1 0.6s;
+            -moz-animation: cd-bounce-1 0.6s;
+            animation: cd-bounce-1 0.6s;
+            }
+        }
+        
+        @-webkit-keyframes cd-bounce-1 {
+            0% {
+            opacity: 0;
+            -webkit-transform: scale(0.5);
+            }
+            60% {
+            opacity: 1;
+            -webkit-transform: scale(1.2);
+            }
+            100% {
+            -webkit-transform: scale(1);
+            }
+        }
+        @-moz-keyframes cd-bounce-1 {
+            0% {
+            opacity: 0;
+            -moz-transform: scale(0.5);
+            }
+            60% {
+            opacity: 1;
+            -moz-transform: scale(1.2);
+            }
+            100% {
+            -moz-transform: scale(1);
+            }
+        }
+        @keyframes cd-bounce-1 {
+            0% {
+            opacity: 0;
+            -webkit-transform: scale(0.5);
+            -moz-transform: scale(0.5);
+            -ms-transform: scale(0.5);
+            -o-transform: scale(0.5);
+            transform: scale(0.5);
+            }
+            60% {
+            opacity: 1;
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            transform: scale(1.2);
+            }
+            100% {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+            }
+        }
+        .cd-timeline-content {
+            display: none;
+            position: relative;
+            margin-left: 60px;
+            background: #ffffff;
+            border-radius: 0.25em;
+            padding: 1em;
+            box-shadow: 0 3px 0 #d7e4ed;
+            top:100px;
+        }
+        .cd-timeline-content::after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+        .cd-timeline-content h2 {
+            color: #303e49;
+        }
+        .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+            font-size: 13px;
+            font-size: 0.8125rem;
+        }
+        .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+            display: inline-block;
+        }
+        .cd-timeline-content p {
+            margin: 1em 0;
+            line-height: 1.6;
+        }
+        .cd-timeline-content .cd-read-more {
+            float: right;
+            padding: .8em 1em;
+            background: #acb7c0;
+            color: #ffffff;
+            border-radius: 0.25em;
+        }
+        .no-touch .cd-timeline-content .cd-read-more:hover {
+            background-color: #bac4cb;
+        }
+        .cd-timeline-content .cd-date {
+            float: left;
+            padding: .8em 0;
+            color: white;
+        }
+        .cd-timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            right: 100%;
+            height: 0;
+            width: 0;
+            border: 7px solid transparent;
+            border-right: 7px solid #ffffff;
+        }
+        @media only screen and (min-width: 768px) {
+            .cd-timeline-content h2 {
+            font-size: 20px;
+            font-size: 1.25rem;
+            }
+            .cd-timeline-content p {
+            font-size: 16px;
+            font-size: 1rem;
+            }
+            .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+            font-size: 14px;
+            font-size: 0.875rem;
+            }
+        }
+        @media only screen and (min-width: 1170px) {
+            .cd-timeline-content {
+            margin-left: 13%;
+            padding: 1.6em;
+            width: 35%;
+            }
+            .cd-timeline-content::before {
+            top: 24px;
+            left: 100%;
+            border-color: transparent;
+            border-left-color: #ffffff;
+            }
+            .cd-timeline-content .cd-read-more {
+            float: left;
+            }
+            .cd-timeline-content .cd-date {
+            position: absolute;
+            width: 100%;
+            left: 122%;
+            top: 6px;
+            font-size: 16px;
+            font-size: 1rem;
+            }
+            /* commented for test  */
+            /* .cd-timeline-block:nth-child(even) .cd-timeline-content {
+            float: right;
+            }
+            .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+            top: 24px;
+            left: auto;
+            right: 100%;
+            border-color: transparent;
+            border-right-color: #ffffff;
+            } */
+
+            /* new block with .cd-timeline-content logic float right disregard to .cd-timeline-block */
+            .cd-timeline-content:nth-child(even) {
+            /* float: right; */
+            margin-left: 55%;
+            }
+            .cd-timeline-content:nth-child(even)::before {
+            top: 24px;
+            left: auto;
+            right: 100%;
+            border-color: transparent;
+            border-right-color: #ffffff;
+            }
+            /* new logic block end  */
+            .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+            float: right;
+            }
+            .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+            left: auto;
+            right: 122%;
+            text-align: right;
+            }
+            .cssanimations .cd-timeline-content.is-hidden {
+            visibility: hidden;
+            }
+            .cssanimations .cd-timeline-content.bounce-in {
+            visibility: visible;
+            -webkit-animation: cd-bounce-2 0.6s;
+            -moz-animation: cd-bounce-2 0.6s;
+            animation: cd-bounce-2 0.6s;
+            }
+        }
+        
+        @media only screen and (min-width: 1170px) {
+            /* inverse bounce effect on even content blocks */
+            .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
+            -webkit-animation: cd-bounce-2-inverse 0.6s;
+            -moz-animation: cd-bounce-2-inverse 0.6s;
+            animation: cd-bounce-2-inverse 0.6s;
+            }
+        }
+        @-webkit-keyframes cd-bounce-2 {
+            0% {
+            opacity: 0;
+            -webkit-transform: translateX(-100px);
+            }
+            60% {
+            opacity: 1;
+            -webkit-transform: translateX(20px);
+            }
+            100% {
+            -webkit-transform: translateX(0);
+            }
+        }
+        @-moz-keyframes cd-bounce-2 {
+            0% {
+            opacity: 0;
+            -moz-transform: translateX(-100px);
+            }
+            60% {
+            opacity: 1;
+            -moz-transform: translateX(20px);
+            }
+            100% {
+            -moz-transform: translateX(0);
+            }
+        }
+        @keyframes cd-bounce-2 {
+            0% {
+            opacity: 0;
+            -webkit-transform: translateX(-100px);
+            -moz-transform: translateX(-100px);
+            -ms-transform: translateX(-100px);
+            -o-transform: translateX(-100px);
+            transform: translateX(-100px);
+            }
+            60% {
+            opacity: 1;
+            -webkit-transform: translateX(20px);
+            -moz-transform: translateX(20px);
+            -ms-transform: translateX(20px);
+            -o-transform: translateX(20px);
+            transform: translateX(20px);
+            }
+            100% {
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(0);
+            }
+        }
+        @-webkit-keyframes cd-bounce-2-inverse {
+            0% {
+            opacity: 0;
+            -webkit-transform: translateX(100px);
+            }
+            60% {
+            opacity: 1;
+            -webkit-transform: translateX(-20px);
+            }
+            100% {
+            -webkit-transform: translateX(0);
+            }
+        }
+        @-moz-keyframes cd-bounce-2-inverse {
+            0% {
+            opacity: 0;
+            -moz-transform: translateX(100px);
+            }
+            60% {
+            opacity: 1;
+            -moz-transform: translateX(-20px);
+            }
+            100% {
+            -moz-transform: translateX(0);
+            }
+        }
+        @keyframes cd-bounce-2-inverse {
+            0% {
+            opacity: 0;
+            -webkit-transform: translateX(100px);
+            -moz-transform: translateX(100px);
+            -ms-transform: translateX(100px);
+            -o-transform: translateX(100px);
+            transform: translateX(100px);
+            }
+            60% {
+            opacity: 1;
+            -webkit-transform: translateX(-20px);
+            -moz-transform: translateX(-20px);
+            -ms-transform: translateX(-20px);
+            -o-transform: translateX(-20px);
+            transform: translateX(-20px);
+            }
+            100% {
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(0);
+            }
+        }
+        /* input:hover {
+            background: purple;
+        } */
+
+    </style>
+    <section id="cd-timeline" class="cd-container">
+        <!-- left  -->
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-ellipse" id="e1980">
+                <input type="button" class="OpenButton" value="THE 1980'S" onclick="showDiv('c1980')">
+            </div> <!-- cd-timeline-img -->
+    
+            <div class="cd-timeline-content c1980">
+                <div class="img_in_back" id="p1980_1"></div>
+                <h2>1988 – Desert Rose Bahá’í School: </h2>
+                <p> Hand of the Cause of God   William Sears and his wife Marguerite Reimer Sears initiated the first Desert Rose Bahá’í School with the assistance of a core group of dedicated friends.  This became an annual event for the south Arizona Bahá’í’s each Thanksgiving weekend and was held in a rented hall in Tucson, Arizona</p>
+            </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+        <!-- 1990's start  -->
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-ellipse" id="e1990">
+                <input type="button" class="OpenButton" value="THE 1990'S" onclick="showDiv('c1990')">
+            </div> <!-- cd-timeline-img -->
+  
+            <div class="cd-timeline-content c1990">
+                <div class="img_in_back" id="p1990_1"></div>
+                <h2>1992 – William Sears passes  </h2>
+                <p> and is interred at East Lawn Palms Cemetery in Tucson, Arizona.  Marguerite was encouraged by the Universal House of Justice to expand the four-day Desert Rose Bahá’í school to a permanent institute. 
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c1990">
+                <div class="img_in_back" id="p1990_2"></div>
+                <h2>1996 – Sears Cottage, Library & Office. </h2>
+                <p> .  A cottage was constructed for Marguerite Sears that provided both comfortable living space and room where she could work with partners on cataloguing and publishing some of Bill Sears’ remaining works.</p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c1990">
+                <div class="img_in_back" id="p1990_3"></div>
+                <h2>1996</h2>
+                <p> – Marguerite, with the help of many friends, <span style="font-weight: bold;">purchased land near Eloy, Arizona</span> for the development of the Desert Rose Bahá’í Institute, which she envisioned as an Institute for education in the arts and agriculture.  When the land was purchased, the Round House was the only building on the property.</p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c1990">
+                <h2>1997 – Desert Rose Bahá’í </h2>
+                <p>with 501(c)3 not-for-profit status.</p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c1990">
+                <h2>1997 – DRBI was dedicated </h2>
+                <p>on November 29,  in honor of the two Hands of the Cause of God, General Shuá’u’lláh `Alá’í and, William Sears whose resting places are within an hour’s drive of the property.   Two roads within the Institute are named in their honor.   </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c1990">
+                <h2>1999– Guest House:  </h2>
+                <p> There was a need for additional housing at Desert Rose for guests.  David Hadden built a Guest House at his expense near the Sears’ cottage for use by he and his family when they came for winter visits but allowing for the house to be owned by Desert Rose and utilized for other special guests and visiting dignitaries.  </p>
+                <div class="img_in_back" id="p1990_4"></div>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c1990">
+                <div class="img_in_back" id="p1990_5"></div>
+                <h2>1999 – Meeting and Dining Hall:   </h2>
+                <p> David Hadden designed and acted as general contractor for the first new structure at Desert Rose.  As a surprise to David it was named Eleanor Hadden Hall in honor of his late mother. </p>
+            </div> <!-- cd-timeline-content -->
+
+        </div> <!-- cd-timeline-block -->
+        <!-- 1990's end  -->
+
+        <!-- 2000's  -->
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-ellipse" id="e2000">
+                <input type="button" class="OpenButton" value="THE 2000'S" onclick="showDiv('c2000')">
+            </div> <!-- cd-timeline-img -->
+  
+            <div class="cd-timeline-content c2000">
+                <h2>2001 – Casa de Rosas:  </h2>
+                <p> 
+                    As with any not-for-profit organization, DRBI requires reliable sources of income to offset operational costs.  One of the earliest responses to this need was the design and construction of the Casas de Rosas.   The 16 rental apartments built around a restful courtyard allow for the perfect combination of privacy and community living while providing regular revenue to the Institute.
+                </p>
+                <div class="img_in_back" id="p2000_2001"></div>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c2000">
+                <div class="img_in_back" id="p2000_2004"></div>
+                <h2>2004 - William Sears Pavilion.  </h2>
+                <p>
+                    It was a vision of the Board of Directors to embody the spiritual peace of the desert in a structure where people could go to reflect, pray, meditate, or celebrate.  The final Pavilion is a beautiful round structure white concrete dome and poured columns made from concrete and crushed white stone. The pavilion was dedicated on November 27, 2004 and the picture above shows David Hadden and Marguerite Sears preparing to bury a box at the foot of the ramp containing the names of all the people who donated towards the Pavilion’s construction.
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c2000">
+                <div class="img_in_back" id="p2000_2005"></div>
+                <h2>2005? – The Guffey Center.  </h2>
+                <p> 
+                    As activities began to ramp up at DRBI and weekend camps and retreats became more common it became apparent that more accommodation needed to be built.  The construction of the Guffey Center enabled up to 50 people to stay during sessions.  The Centre honors two of DRBI’s steadfast volunteers, Ray and Gloria Guffey.  Ray’s impact can be seen in every sidewalk and stone while Gloria continues to serve the Institute in any way she can.
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c2000">
+                <h2>2006 – Marguerite Sears passes.</h2>
+                <p> 
+                    After many years of devoted service Mrs. Sears passes on at the age of 94.  She is buried in the Memorial Garden at DRBI
+                </p>
+                <div class="img_in_back" id="p2000_2006"></div>
+            </div> <!-- cd-timeline-content -->
+
+        </div> <!-- cd-timeline-block -->
+        <!-- 2000's end  -->
+
+        <!-- 2010's start  -->
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-ellipse" id="e2010">
+                <input type="button" class="OpenButton" value="THE 2010'S" onclick="showDiv('c2010')">
+            </div> <!-- cd-timeline-img -->
+  
+            <div class="cd-timeline-content c2010">
+                <div class="img_in_back" id="p2010_2017"></div>
+                <h2>2017 KURE LP FM:   </h2>
+                <p> 
+                    Volunteer Virginia Healey, then part of the DRBI Management Team, learned that the FCC was opening a new license for a low power (LP) radio station for Eloy Arizona.  Recognizing the opportunity to serve the community Virginia leapt at the chance.  We are thrilled to have KURE LP 106.1 FM as a part of the Institute.  
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c2010">
+                <div class="img_in_back" id="p2010_2018"></div>
+                <h2>2018 Guest House becomes the Art Gallery:   </h2>
+                <p>
+                    Early residents and artists Duffy and Jeanne proposed moving DRBI one step closer to the founders’ original vision by turning the Guest House into an Art Gallery.  Using their own funds and efforts they converted what had been a two-bedroom home into an art space with room for shows, classes, a both a painting and working pottery studio. 
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c2010">
+                <div class="img_in_back" id="p2010_2019"></div>
+                <h2>2019 Art Gallery opening: </h2>
+                <p> 
+                    Since January 2019 alone, the renovated Art Centre hosted over one thousand people?  In four months alone, one hundred and twenty-two students took 24 classes in everything from painting, pastels, tile glazing and beading techniques to Musubi Stones, Pysanky Egg decorating and Silk Scarf dying. These classes were organized by local artist Bonnie Light, who volunteered her services to DRBI.  
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content c2010">
+                <div class="img_in_back" id="p2010_2019_2"></div>
+                <h2>2019 DRBI Farm:  </h2>
+                <p> 
+                   The Agriculture project, led by Dwight Cox, launched with the vision of converting untillable land to soil-rich land that can produce and support healthy organic food.  The short-term objective is to develop a 3,000 square-foot sustainable market garden that will serve as a template for people and organizations that are looking at creating community-supported agriculture in the local area and beyond.  
+                </p>
+            </div> <!-- cd-timeline-content -->
+
+        </div> <!-- cd-timeline-block -->
+        <!-- 2010's end  -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-ellipse" id="e2020">
+                <input type="button" class="OpenButton" value="THE 2020'S" onclick="showDiv('c2020')">
+            </div> <!-- cd-timeline-img -->
+    
+            <div class="cd-timeline-content c2020">
+                <div class="img_in_back" id="p2020"></div>
+                <h2>2020 Black Orchard Farms </h2>
+                <p> 
+                    Farms   In Summer, 2020 DRBI welcomed Black Orchard Farms to the property.  Black Orchard’s project is going forward in two phases. Phase 1, to be completed by the end of 2020, includes a 3-acre pichuberry plot with a 1/2-acre retention pond for irrigation and to raise fish. Read More link to the Agriculture page article on BOF
+                </p>
+            </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+
+    </section> <!-- cd-timeline -->
+    <script>
+
+        function check_display_all(target_class,all_blocks){
+            for (var i=0;i<all_blocks.length;i++){
+                var class_bool = $(all_blocks[i]).hasClass(target_class);
+                if (!class_bool){
+                    $(all_blocks[i]).css({'display':'none'});
+                }
+            }
+        }
+        function showDiv(year_val) {
+            console.log(year_val);
+            var all_blocks = $('.cd-timeline-content');
+            var display_val =  $(`.${year_val}`).css('display');
+            console.log(display_val);
+            var year_4_digit = year_val.slice(1,5);
+            if (display_val == 'none'){
+                check_display_all(year_val,all_blocks);
+                $(`.${year_val}`).css({'display':'block'});
+                $(`#e${year_4_digit}`).css({'background-color':'#5c5761'});
+            }
+            else{
+                $(`.${year_val}`).css({'display':'none'});
+                $(`#e${year_4_digit}`).css({'background-color':'#1a0033'});
+            }
+        }
+
+    </script>
+  
